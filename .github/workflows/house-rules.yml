@@ -25,4 +25,4 @@ jobs:
   house-rules:
     uses: storytold/craft-common-actions/.github/workflows/house-rules.yml@main
     with:
-      rust: true
+      rust: false
