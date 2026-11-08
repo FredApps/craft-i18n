@@ -57,3 +57,40 @@ fn wordcraft_descriptive_feature_names_cover_offered_locales() {
         }
     }
 }
+
+// Shared glossary with GridCraft's naming change.
+// These values make deliberate wording changes visible in both apps' reviews. The catalog
+// checker remains self-contained; it must not read another repository at test time.
+const GRIDCRAFT_SHARED_GLOSSARY: &[(&str, &str, &str)] = &[
+    ("cs", "Diagram", "Ozdobný text"),
+    ("de", "Diagramm", "Dekorativer Text"),
+    ("es", "Diagrama", "Texto decorativo"),
+    ("fr", "Diagramme", "Texte décoratif"),
+    ("it", "Diagramma", "Testo decorativo"),
+    ("ja", "図解", "装飾文字"),
+    ("ko", "다이어그램", "장식 텍스트"),
+    ("nl", "Diagram", "Decoratieve tekst"),
+    ("pl", "Diagram", "Tekst ozdobny"),
+    ("pt-br", "Diagrama", "Texto decorativo"),
+    ("ro", "Diagramă", "Text decorativ"),
+    ("ru", "Схема", "Декоративный текст"),
+    ("sr-latn", "Dijagram", "Ukrasni tekst"),
+    ("tr", "Diyagram", "Dekoratif Metin"),
+    ("uk", "Діаграма", "Декоративний текст"),
+    ("vi", "Sơ đồ", "Chữ trang trí"),
+    ("zh-hans", "图示", "装饰文字"),
+];
+
+#[test]
+fn wordcraft_shared_feature_terms_match_the_suite_glossary() {
+    for (locale, diagram, decorative_text) in GRIDCRAFT_SHARED_GLOSSARY {
+        let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+            .join(format!("../../locales/{locale}/wordcraft.tsv"));
+        let text = std::fs::read_to_string(path).unwrap();
+        for (source, expected) in [("Diagram", diagram), ("Decorative Text", decorative_text)] {
+            let prefix = format!("\t{source}\t");
+            let actual = text.lines().find_map(|line| line.strip_prefix(&prefix));
+            assert_eq!(actual, Some(*expected), "{locale}: {source}");
+        }
+    }
+}

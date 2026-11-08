@@ -92,3 +92,34 @@ cycle or relationship. Distinct from a numeric-data chart.
 **Decorative Text**: text styled with fills, outlines, effects or geometric warping.
 These feature names describe what the app does and are translated by meaning, not
 kept as English brand names.
+
+### Shared Diagram and Decorative Text wording
+
+The WordCraft catalog uses the same terms as GridCraft for shared language/script
+variants. GridCraft's `pt` module is Brazilian Portuguese (`pt-br` here), its `sr`
+module is Serbian Latin (`sr-latn` here), and its `zh` module is Simplified Chinese
+(`zh-hans` here). Serbian Cyrillic and Traditional Chinese keep their own scripts.
+
+| Locale | Diagram | Decorative Text |
+| --- | --- | --- |
+| cs | Diagram | Ozdobný text |
+| de | Diagramm | Dekorativer Text |
+| es | Diagrama | Texto decorativo |
+| fr | Diagramme | Texte décoratif |
+| it | Diagramma | Testo decorativo |
+| ja | 図解 | 装飾文字 |
+| ko | 다이어그램 | 장식 텍스트 |
+| nl | Diagram | Decoratieve tekst |
+| pl | Diagram | Tekst ozdobny |
+| pt-br | Diagrama | Texto decorativo |
+| ro | Diagramă | Text decorativ |
+| ru | Схема | Декоративный текст |
+| sr-latn | Dijagram | Ukrasni tekst |
+| tr | Diyagram | Dekoratif Metin |
+| uk | Діаграма | Декоративний текст |
+| vi | Sơ đồ | Chữ trang trí |
+| zh-hans | 图示 | 装饰文字 |
+
+These are the agreed draft terms, not a claim of native-speaker review. The regression
+test pins the shared values so later wording changes receive deliberate cross-app
+review. Missing translations continue to fall back to English.
