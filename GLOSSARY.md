@@ -85,3 +85,10 @@ _Avoid_: submission, proposal
 
 **Reviewer**: a trusted speaker of one locale who accepts or declines that locale's Suggestions. A
 Reviewer is per locale, never global.
+
+**Diagram**: an editable arrangement of labeled shapes, such as a process, hierarchy,
+cycle or relationship. Distinct from a numeric-data chart.
+
+**Decorative Text**: text styled with fills, outlines, effects or geometric warping.
+These feature names describe what the app does and are translated by meaning, not
+kept as English brand names.

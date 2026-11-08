@@ -296,3 +296,12 @@ licence texts from [spdx/license-list-data](https://github.com/spdx/license-list
 ## WordCraft: Arabic rows for the Macros, Create Source, Language data and Custom Document Properties labels
 
 @tlomts-dev contributed seven Arabic (`ar`) rows to `locales/ar/wordcraft.tsv` (`Run`, `Corporate Author`, `Language data`, `Language Packs`, `Install Language Pack`, `Remove Language Pack`, `Custom Document Properties`) for labels that showed in English in the Arabic interface, AI-assisted with Claude Code and written from the plain meaning of the English, in the terminology the file already uses (`Author`, `Properties`, `Remove`, `Language`, and `Run` as in the PdfCraft catalog). No other product's localisation was consulted. @salehnemari-max, the catalog's Arabic author and a native speaker, read the seven rows and approved them as they are; they match the terms already in the catalog.
+
+## WordCraft descriptive feature names (2026-11-08)
+
+The Diagram and Decorative Text labels and related messages were added in `ar`, `bg`,
+`cs`, `da`, `de`, `es`, `et`, `fr`, `hr`, `hu`, `it`, `ja`, `ko`, `nl`, `pl`, `pt-br`,
+`ro`, `ru`, `sl`, `sr`, `sr-latn`, `sv`, `tr`, `uk`, `vi`, `zh-hans` and `zh-hant`.
+These are AI-assisted translations written from the plain meaning of the English;
+no native-speaker review has been recorded. Existing translations and their credits
+remain unchanged. The new rows are additive so earlier app pins retain their labels.
