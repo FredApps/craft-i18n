@@ -98,7 +98,11 @@ fn wordcraft_shared_feature_terms_match_the_suite_glossary() {
 
 // Locales whose draft Diagram still equals Chart, pending a native speaker's choice (see
 // GLOSSARY.md). Remove a locale once it has a distinct term.
-const DIAGRAM_EQUALS_CHART_PENDING: &[&str] = &["da", "hu", "sv"];
+const DIAGRAM_EQUALS_CHART_PENDING: &[&str] = &["da", "hu"];
+
+// Locales where a native speaker confirmed that Diagram and Chart share one word (see
+// GLOSSARY.md): `sv` uses "Diagram" for both (craft-i18n#211).
+const DIAGRAM_EQUALS_CHART_CONFIRMED: &[&str] = &["sv"];
 
 fn row<'a>(text: &'a str, source: &str) -> Option<&'a str> {
     let prefix = format!("\t{source}\t");
@@ -116,7 +120,9 @@ fn wordcraft_diagram_labels_differ_from_chart_labels() {
             else {
                 continue;
             };
-            if DIAGRAM_EQUALS_CHART_PENDING.contains(locale) {
+            if DIAGRAM_EQUALS_CHART_PENDING.contains(locale)
+                || DIAGRAM_EQUALS_CHART_CONFIRMED.contains(locale)
+            {
                 continue;
             }
             assert_ne!(

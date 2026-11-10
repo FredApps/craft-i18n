@@ -308,5 +308,6 @@ the rows were drafted), from the plain meaning of the English; no native-speaker
 has been recorded. No other product's localisation was consulted. Existing translations
 and their credits remain unchanged. The new rows are additive so earlier app pins retain
 their labels. After review in craft-i18n#211, Diagram in `ar`, `bg`, `de`, `et` and `uk`
-was changed to a schema/scheme word so it no longer repeats the Chart label; in `da`, `hu`
-and `sv` it still equals Chart, pending a native speaker's choice.
+was changed to a schema/scheme word so it no longer repeats the Chart label. In `sv` it
+equals Chart ("Diagram") by choice, confirmed by @FredApps, a native speaker, in
+craft-i18n#211. In `da` and `hu` it still equals Chart, pending a native speaker's choice.

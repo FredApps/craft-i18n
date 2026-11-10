@@ -89,9 +89,11 @@ Reviewer is per locale, never global.
 **Diagram**: an editable arrangement of labeled shapes, such as a process, hierarchy,
 cycle or relationship. Distinct from a numeric-data chart, so a locale's Diagram must not be
 the same word as its Chart: both sit on the Insert tab. `ar`, `bg`, `de`, `et` and `uk` use a
-schema/scheme word for this reason. In `da`, `hu` and `sv` the draft Diagram still equals Chart;
-the candidate words there already mean Figure or have another main sense, so the choice waits
-for a native speaker. The checker lists these three as known exceptions.
+schema/scheme word for this reason. In `sv` Diagram equals Chart (both "Diagram") by a native
+speaker's choice, confirmed in craft-i18n#211, so it is a deliberate exception. In `da` and `hu`
+the draft Diagram still equals Chart; the candidate words there already mean Figure or have
+another main sense, so the choice waits for a native speaker. The checker lists these three as
+known exceptions.
 
 **Decorative Text**: text styled with fills, outlines, effects or geometric warping.
 These feature names describe what the app does and are translated by meaning, not
