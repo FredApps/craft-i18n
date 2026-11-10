@@ -58,12 +58,13 @@ fn wordcraft_descriptive_feature_names_cover_offered_locales() {
     }
 }
 
-// Shared glossary with GridCraft's naming change.
+// Shared glossary with GridCraft's naming change (storytold/gridcraft#3622; `de` and `uk`
+// changed here so Diagram differs from Chart).
 // These values make deliberate wording changes visible in both apps' reviews. The catalog
 // checker remains self-contained; it must not read another repository at test time.
 const GRIDCRAFT_SHARED_GLOSSARY: &[(&str, &str, &str)] = &[
     ("cs", "Diagram", "Ozdobný text"),
-    ("de", "Diagramm", "Dekorativer Text"),
+    ("de", "Schema", "Dekorativer Text"),
     ("es", "Diagrama", "Texto decorativo"),
     ("fr", "Diagramme", "Texte décoratif"),
     ("it", "Diagramma", "Testo decorativo"),
@@ -76,7 +77,7 @@ const GRIDCRAFT_SHARED_GLOSSARY: &[(&str, &str, &str)] = &[
     ("ru", "Схема", "Декоративный текст"),
     ("sr-latn", "Dijagram", "Ukrasni tekst"),
     ("tr", "Diyagram", "Dekoratif Metin"),
-    ("uk", "Діаграма", "Декоративний текст"),
+    ("uk", "Схема", "Декоративний текст"),
     ("vi", "Sơ đồ", "Chữ trang trí"),
     ("zh-hans", "图示", "装饰文字"),
 ];
@@ -91,6 +92,37 @@ fn wordcraft_shared_feature_terms_match_the_suite_glossary() {
             let prefix = format!("\t{source}\t");
             let actual = text.lines().find_map(|line| line.strip_prefix(&prefix));
             assert_eq!(actual, Some(*expected), "{locale}: {source}");
+        }
+    }
+}
+
+// Locales whose draft Diagram still equals Chart, pending a native speaker's choice (see
+// GLOSSARY.md). Remove a locale once it has a distinct term.
+const DIAGRAM_EQUALS_CHART_PENDING: &[&str] = &["da", "hu", "sv"];
+
+fn row<'a>(text: &'a str, source: &str) -> Option<&'a str> {
+    let prefix = format!("\t{source}\t");
+    text.lines().find_map(|line| line.strip_prefix(&prefix))
+}
+
+#[test]
+fn wordcraft_diagram_labels_differ_from_chart_labels() {
+    for locale in LOCALES {
+        let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+            .join(format!("../../locales/{locale}/wordcraft.tsv"));
+        let text = std::fs::read_to_string(path).unwrap();
+        for (diagram, chart) in [("Diagram", "Chart"), ("Insert Diagram", "Insert Chart")] {
+            let (Some(diagram_text), Some(chart_text)) = (row(&text, diagram), row(&text, chart))
+            else {
+                continue;
+            };
+            if DIAGRAM_EQUALS_CHART_PENDING.contains(locale) {
+                continue;
+            }
+            assert_ne!(
+                diagram_text, chart_text,
+                "{locale}: {diagram} equals {chart}"
+            );
         }
     }
 }

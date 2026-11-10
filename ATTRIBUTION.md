@@ -303,6 +303,10 @@ licence texts from [spdx/license-list-data](https://github.com/spdx/license-list
 The Diagram and Decorative Text labels and related messages were added in `ar`, `bg`,
 `cs`, `da`, `de`, `es`, `et`, `fr`, `hr`, `hu`, `it`, `ja`, `ko`, `nl`, `pl`, `pt-br`,
 `ro`, `ru`, `sl`, `sr`, `sr-latn`, `sv`, `tr`, `uk`, `vi`, `zh-hans` and `zh-hant`.
-These are AI-assisted translations written from the plain meaning of the English;
-no native-speaker review has been recorded. Existing translations and their credits
-remain unchanged. The new rows are additive so earlier app pins retain their labels.
+Written by @FredApps, AI-assisted with a coding agent (the tool was not recorded when
+the rows were drafted), from the plain meaning of the English; no native-speaker review
+has been recorded. No other product's localisation was consulted. Existing translations
+and their credits remain unchanged. The new rows are additive so earlier app pins retain
+their labels. After review in craft-i18n#211, Diagram in `ar`, `bg`, `de`, `et` and `uk`
+was changed to a schema/scheme word so it no longer repeats the Chart label; in `da`, `hu`
+and `sv` it still equals Chart, pending a native speaker's choice.
