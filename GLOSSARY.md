@@ -97,7 +97,7 @@ for a native speaker. The checker lists these three as known exceptions.
 These feature names describe what the app does and are translated by meaning, not
 kept as English brand names.
 
-### Shared Diagram and Decorative Text wording
+## Shared Diagram and Decorative Text wording
 
 The WordCraft catalog uses the same terms as GridCraft
 ([storytold/gridcraft#3622](https://github.com/storytold/gridcraft/pull/3622), head `beae40d`)
