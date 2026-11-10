@@ -36,7 +36,11 @@ Shared translations for the Craft Apps: TSV catalogs in `locales/` and the check
   (spelling dictionaries, hyphenation patterns) is the exception: unchanged open-licensed upstream
   files ([ADR 0004](docs/adr/0004-third-party-language-data.md)).
 - **Credit:** new translations and migrated catalogs are recorded in `ATTRIBUTION.md`, including
-  AI assistance and whether a native speaker reviewed them.
+  AI assistance and whether a native speaker reviewed them. Recording AI assistance in
+  `ATTRIBUTION.md` is data provenance (how a translation was produced and whether a native speaker
+  reviewed it), not agent attribution of the pull request; core rule 15 does not apply to it.
+- **Tests for catalog rows:** core rule 4's "add a test that fails without the fix" applies to the
+  checker and tools. A catalog-only change is covered by CI's catalog checks; it needs no new test.
 - **Never crash.** The checker's `lib.rs` denies `unwrap`, `expect`, `panic` and friends; the
   workspace forbids `unsafe`.
 - **Before merging:** `cargo fmt --all --check`,
