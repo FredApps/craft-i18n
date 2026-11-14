@@ -321,3 +321,13 @@ sv, tr, uk, vi, zh-hans and zh-hant (sr.tsv became sr-latn). The source PR said
 the translations were machine-drafted and invited native-speaker review. LZW and
 ZIP stay identity rows, as in the PSD catalogs. Locales that already had these
 keys (including he, ro and ur) were left unchanged.
+
+## PhotoCraft: Rotate View Left and Right from photocraft#4931
+
+Photocraft #4931, submitted by @FredApps, carried translations of "Rotate View Left" and
+"Rotate View Right" in 20 in-repo catalogs. Those files moved here before it merged, so the
+same rows are now in `locales/<code>/photocraft.tsv` for cs, de, el, es, fr, hu, id, it, ja,
+ko, nl, pl, pt-br, ru, sr-latn, tr, uk, vi, zh-hans and zh-hant (sr.tsv became sr-latn).
+They were written with a coding agent from the plain meaning of the English (the tool was
+not recorded); no native-speaker review has been recorded. Other locales have no rows for
+these keys yet.
